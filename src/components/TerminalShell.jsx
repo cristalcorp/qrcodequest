@@ -56,7 +56,7 @@ export default function TerminalShell() {
     <div className="terminal">
       <div className="title">Q[R|U]EST CODE</div>
       <div className="qr-row">
-        <img src="src/qr/kirikoo.png" alt="QR code" className="qr" />
+        <img src="/qrcodequest/qr/kirikoo.png" alt="QR code" className="qr" />
         <div className="loading-text">
           Loading location<span className="dots"></span>
         </div>
