@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import CRTSweep from "./CRTSweep.jsx";
 
+
 const QUOTES = [
   "« Le silence est fait de paroles que l’on n’a pas dites. » – Marcel Pagnol",
   "« Celui qui a déplacé la montagne, c’est celui qui a commencé par enlever les petites pierres. » – Confucius",
