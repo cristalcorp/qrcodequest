@@ -78,7 +78,7 @@ export default function TerminalShell() {
       />
 
       <audio ref={audioRef} autoPlay hidden>
-        <source src="/audio/northern-winds.mp3" type="audio/mp3" />
+        {/* <source src="/audio/northern-winds.mp3" type="audio/mp3" /> */}
       </audio>
 
       <CRTSweep />
