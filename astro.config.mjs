@@ -8,5 +8,5 @@ export default defineConfig({
   output: 'static',
   base: '/qrcodequest/',
   integrations: [react()],
-  site: 'https://cristalcorp.github.io/qrcodequest/',
+  site: 'https://cristalcorp.github.io/',
 });
