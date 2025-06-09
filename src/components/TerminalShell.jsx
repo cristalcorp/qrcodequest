@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import CRTSweep from "./CRTSweep.jsx";
+import useGeoLocation from "../hooks/useGeoLocation";
 
 
 const QUOTES = [
@@ -11,6 +12,7 @@ const QUOTES = [
 ];
 
 export default function TerminalShell() {
+  const { lat, lon, label, method } = useGeoLocation();
   const [history, setHistory] = useState([]);
   const inputRef = useRef(null);
   const audioRef = useRef(null);
@@ -36,6 +38,14 @@ export default function TerminalShell() {
           const quote = QUOTES[Math.floor(Math.random() * QUOTES.length)];
           response = quote;
           break;
+        case "locate":
+          if (label) {
+            response = `📍 Location: ${label} (${method})`;
+          } else {
+            response = "⏳ Detecting location...";
+          }
+          break;
+
         case "clear":
           setHistory([]);
           e.target.value = "";
