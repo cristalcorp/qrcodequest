@@ -24,7 +24,7 @@ export default function TerminalShell() {
 
       switch (cmd) {
         case "help":
-          response = "Available commands: help, play, pause, read, clear";
+          response = "Available commands: help, play, pause, read, locate, clear";
           break;
         case "play":
           audioRef.current?.play();
@@ -83,7 +83,7 @@ export default function TerminalShell() {
         ref={inputRef}
         type="text"
         className="cli"
-        placeholder="> type a command"
+        placeholder="> type a command or help"
         onKeyDown={handleCommand}
       />
 
