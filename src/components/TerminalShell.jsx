@@ -67,7 +67,7 @@ export default function TerminalShell() {
     <div className="terminal">
       <div className="title">Activate Cities</div>
       <div className="qr-row">
-        <img src="/qrcodequest/qr/kirikoo.png" alt="QR code" className="qr" />
+        <img src="/qr/kirikoo.png" alt="QR code" className="qr" />
         <div className="loading-text">
           Loading location<span className="dots"></span>
         </div>
@@ -88,7 +88,7 @@ export default function TerminalShell() {
       />
 
       <audio ref={audioRef} autoPlay hidden>
-        <source src="/qrcodequest/audio/output.mp3" type="audio/mp3" />
+        <source src="/audio/output.mp3" type="audio/mp3" />
       </audio>
 
       <CRTSweep />
