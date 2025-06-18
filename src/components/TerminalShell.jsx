@@ -65,7 +65,7 @@ export default function TerminalShell() {
 
   return (
     <div className="terminal">
-      <div className="title">Q[R|U]EST CODE</div>
+      <div className="title">Activate Cities</div>
       <div className="qr-row">
         <img src="/qrcodequest/qr/kirikoo.png" alt="QR code" className="qr" />
         <div className="loading-text">

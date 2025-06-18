@@ -6,7 +6,7 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
-  base: '/qrcodequest/',
+  base: '/',
   integrations: [react()],
-  site: 'https://cristalcorp.github.io/qrcodequest/',
+  site: 'https://nkb.nsdos.io',
 });
