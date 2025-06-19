@@ -84,15 +84,19 @@ audio {
   white-space: pre;
   display: flex;
   align-items: center;
+  justify-content: center;
   height: 100%;
   min-height: 40px;
-  width: 210px;
+  width: 400px;
   @if $debug {
     border: 2px solid yellow;
   }
 }
 
 .dots {
+  display: inline-block;
+  min-width: 30px; // réserve environ 3 caractères
+  text-align: left;
   &::after {
     content: "...";
     animation: dots 1.5s steps(4, end) infinite;
@@ -114,6 +118,20 @@ audio {
   }
   100% {
     content: "   ";
+  }
+}
+
+.random-instruction {
+  font-family: $font-terminal;
+  font-size: 1rem;
+  color: $color-text;
+  margin-bottom: 2rem;
+  white-space: pre-wrap;
+  text-align: left;
+  line-height: 1.4;
+  max-width: 640px;
+  @if $debug {
+    border: 2px dashed cyan;
   }
 }
 
