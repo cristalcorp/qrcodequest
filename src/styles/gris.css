@@ -5,7 +5,6 @@ body {
   font-size: 1.25rem;
   padding: 2rem;
   margin-top: 4rem;
-  /* padding-top: 0rem; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,7 +23,7 @@ audio {
   filter: grayscale(100%) brightness(150%);
 }
 
-.terminal {
+.term-o-rama {
   padding-left: 1rem;;
   max-width: 640px;
   width: 100%;
@@ -32,7 +31,7 @@ audio {
   /* margin-bottom: 200px; */
   display: flex;
   flex-direction: column;
-  /* border: 2px solid orangered; */
+  border: 2px solid orangered;
 }
 
 .title {
@@ -42,18 +41,18 @@ audio {
   margin-bottom: 3rem;
   font-family: 'Consolas', monospace;
   color: #ccc;
-  /* border: 2px solid yellow; */
+  border: 2px solid yellow;
 }
 
-.qr-row {
+.central-row {
   display: flex;
   align-items: center;
   gap: 1.5rem;
   margin-bottom: 2rem;
-  /* border: 2px solid green; */
+  border: 2px solid green;
 }
 
-.qr {
+.qr-code {
   max-width: 200px;
   margin-bottom: 1rem;
   filter: grayscale(100%) brightness(150%);
@@ -68,8 +67,13 @@ audio {
   align-items: center;
   height: 100%;
   min-height: 40px;
-  /* border: 2px solid yellow; */
+  border: 2px solid yellow;
   width: 210px;
+}
+
+.dots::after {
+  content: '...';
+  animation: dots 1.5s steps(4, end) infinite;
 }
 
 @keyframes dots {
@@ -78,11 +82,6 @@ audio {
   50%  { content: '..';  }
   75%  { content: '...'; }
   100% { content: '   '; }
-}
-
-.dots::after {
-  content: '...';
-  animation: dots 1.5s steps(4, end) infinite;
 }
 
 .cli {
@@ -96,20 +95,13 @@ audio {
   outline: none;
   padding: 0.5rem 0;
   margin-top: 1rem;
-  /* border: 2px solid blue; */
+  border: 2px solid blue;
 }
 
 .output-line {
   margin-bottom: 0.5rem;
   white-space: pre-wrap;
-  /* border: 2px solid orange; */
-}
-
-@keyframes sweep {
-  0% { top: -10%; opacity: 0; }
-  30% { opacity: 0.1; }
-  50% { top: 50%; opacity: 0.05; }
-  100% { top: 110%; opacity: 0; }
+  border: 2px solid orange;
 }
 
 .scanline-animated {
@@ -127,4 +119,11 @@ audio {
   animation: sweep 5s ease-in;
   pointer-events: none;
   z-index: 15;
+}
+
+@keyframes sweep {
+  0% { top: -10%; opacity: 0; }
+  30% { opacity: 0.1; }
+  50% { top: 50%; opacity: 0.05; }
+  100% { top: 110%; opacity: 0; }
 }

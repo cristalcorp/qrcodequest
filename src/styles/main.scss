@@ -1,0 +1,178 @@
+$font-terminal: "Courier New", Courier, monospace;
+$font-title: "Consolas", monospace;
+$color-bg: #111111;
+$color-text: #cccccc;
+$color-border: #444;
+
+$debug: false;
+
+body {
+  background-color: $color-bg;
+  color: $color-text;
+  font-family: $font-terminal;
+  font-size: 1.25rem;
+  padding: 2rem;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+a,
+button {
+  color: $color-text;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+audio {
+  margin-top: 1rem;
+  filter: grayscale(100%) brightness(150%);
+}
+
+.term-o-rama {
+  padding-left: 1rem;
+  max-width: 640px;
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  @if $debug {
+    border: 2px solid orangered;
+  }
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  font-family: $font-title;
+  color: $color-text;
+  @if $debug {
+    border: 2px solid yellow;
+  }
+}
+
+.central-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  @if $debug {
+    border: 2px solid green;
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center; // recentre le texte sous le QR code
+  }
+}
+
+.qr-code {
+  max-width: 200px;
+  margin-bottom: 1rem;
+  filter: grayscale(100%) brightness(150%);
+}
+
+.loading-text {
+  color: $color-text;
+  font-family: $font-terminal;
+  font-size: 1rem;
+  white-space: pre;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  min-height: 40px;
+  width: 210px;
+  @if $debug {
+    border: 2px solid yellow;
+  }
+}
+
+.dots {
+  &::after {
+    content: "...";
+    animation: dots 1.5s steps(4, end) infinite;
+  }
+}
+
+@keyframes dots {
+  0% {
+    content: "   ";
+  }
+  25% {
+    content: ".";
+  }
+  50% {
+    content: "..";
+  }
+  75% {
+    content: "...";
+  }
+  100% {
+    content: "   ";
+  }
+}
+
+.cli {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid $color-border;
+  color: $color-text;
+  font-family: $font-terminal;
+  font-size: 1rem;
+  width: 100%;
+  outline: none;
+  padding: 0.5rem 0;
+  margin-top: 1rem;
+  @if $debug {
+    border: 2px solid blue;
+  }
+}
+
+.output-line {
+  margin-bottom: 0.5rem;
+  white-space: pre-wrap;
+  text-shadow: 0 0 1px #0f0;
+  @if $debug {
+    border: 2px solid orange;
+  }
+}
+
+.scanline-animated {
+  position: fixed;
+  top: -10%;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.9) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: sweep 5s ease-in;
+  pointer-events: none;
+  z-index: 15;
+}
+
+@keyframes sweep {
+  0% {
+    top: -10%;
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.1;
+  }
+  50% {
+    top: 50%;
+    opacity: 0.05;
+  }
+  100% {
+    top: 110%;
+    opacity: 0;
+  }
+}

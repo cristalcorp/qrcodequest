@@ -64,10 +64,10 @@ export default function TerminalShell() {
   }, []);
 
   return (
-    <div className="terminal">
+    <div className="term-o-rama">
       <div className="title">Activate Cities</div>
-      <div className="qr-row">
-        <img src="/qr/kirikoo.png" alt="QR code" className="qr" />
+      <div className="central-row">
+        <img src="/qr/kirikoo.png" alt="QR code" className="qr-code" />
         <div className="loading-text">
           Loading location<span className="dots"></span>
         </div>
