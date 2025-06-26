@@ -1,16 +1,7 @@
-$font-terminal: "Courier New", Courier, monospace;
-$font-title: "Consolas", monospace;
-$color-bg: #111111;
-$color-text: #cccccc;
-$color-border: #444;
-
-$debug: false;
-$debug-css: true;
-
 body {
-  background-color: $color-bg;
-  color: $color-text;
-  font-family: $font-terminal;
+  background-color: #111111;
+  color: #cccccc;
+  font-family: "Courier New", Courier, monospace;
   font-size: 1.25rem;
   padding: 2rem;
   margin-top: 4rem;
@@ -22,7 +13,7 @@ body {
 
 a,
 button {
-  color: $color-text;
+  color: #cccccc;
   background: none;
   border: none;
   cursor: pointer;
@@ -40,9 +31,6 @@ audio {
   min-height: 300px;
   display: flex;
   flex-direction: column;
-  @if $debug {
-    border: 2px solid orangered;
-  }
 }
 
 .title {
@@ -50,11 +38,8 @@ audio {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 3rem;
-  font-family: $font-title;
-  color: $color-text;
-  @if $debug {
-    border: 2px solid yellow;
-  }
+  font-family: "Consolas", monospace;
+  color: #cccccc;
 }
 
 .central-row {
@@ -62,13 +47,11 @@ audio {
   align-items: center;
   gap: 1.5rem;
   margin-bottom: 2rem;
-  @if $debug {
-    border: 2px solid green;
-  }
-
-  @media (max-width: 600px) {
+}
+@media (max-width: 600px) {
+  .central-row {
     flex-direction: column;
-    align-items: center; // recentre le texte sous le QR code
+    align-items: center;
   }
 }
 
@@ -79,8 +62,8 @@ audio {
 }
 
 .loading-text {
-  color: $color-text;
-  font-family: $font-terminal;
+  color: #cccccc;
+  font-family: "Courier New", Courier, monospace;
   font-size: 1rem;
   white-space: pre;
   display: flex;
@@ -89,19 +72,16 @@ audio {
   height: 100%;
   min-height: 40px;
   width: 400px;
-  @if $debug {
-    border: 2px solid yellow;
-  }
 }
 
 .dots {
   display: inline-block;
-  min-width: 30px; // réserve environ 3 caractères
+  min-width: 30px;
   text-align: left;
-  &::after {
-    content: "...";
-    animation: dots 1.5s steps(4, end) infinite;
-  }
+}
+.dots::after {
+  content: "...";
+  animation: dots 1.5s steps(4, end) infinite;
 }
 
 @keyframes dots {
@@ -121,44 +101,34 @@ audio {
     content: "   ";
   }
 }
-
 .random-instruction {
-  font-family: $font-terminal;
+  font-family: "Courier New", Courier, monospace;
   font-size: 1rem;
-  color: $color-text;
+  color: #cccccc;
   margin-bottom: 2rem;
   white-space: pre-wrap;
   text-align: left;
   line-height: 1.4;
   max-width: 640px;
-  @if $debug {
-    border: 2px dashed cyan;
-  }
 }
 
 .cli {
   background: transparent;
   border: none;
-  border-bottom: 1px solid $color-border;
-  color: $color-text;
-  font-family: $font-terminal;
+  border-bottom: 1px solid #444;
+  color: #cccccc;
+  font-family: "Courier New", Courier, monospace;
   font-size: 1rem;
   width: 100%;
   outline: none;
   padding: 0.5rem 0;
   margin-top: 1rem;
-  @if $debug {
-    border: 2px solid blue;
-  }
 }
 
 .output-line {
   margin-bottom: 0.5rem;
   white-space: pre-wrap;
   text-shadow: 0 0 1px #0f0;
-  @if $debug {
-    border: 2px solid orange;
-  }
 }
 
 .scanline-animated {
@@ -167,12 +137,7 @@ audio {
   left: 0;
   width: 100%;
   height: 10%;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.9) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0) 100%);
   animation: sweep 5s ease-in;
   pointer-events: none;
   z-index: 15;
@@ -195,18 +160,16 @@ audio {
     opacity: 0;
   }
 }
-
 .theme-switcher-container {
   display: none;
-
-  @if $debug-css {
-    display: block;
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    background: $color-bg;
-    padding: 0.5rem;
-    border: 1px solid $color-border;
-    z-index: 100;
-  }
+  display: block;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: #111111;
+  padding: 0.5rem;
+  border: 1px solid #444;
+  z-index: 100;
 }
+
+/*# sourceMappingURL=main.css.map */

@@ -14,8 +14,10 @@
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.6",
     "astro": "^5.9.1",
+    "leaflet": "^1.9.4",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-leaflet": "^5.0.0"
   },
   "devDependencies": {
     "gh-pages": "^6.3.0",

@@ -1,11 +1,11 @@
 $font-terminal: "Courier New", Courier, monospace;
 $font-title: "Consolas", monospace;
-$color-bg: #111111;
-$color-text: #cccccc;
+$color-bg: #000000;
+$color-text: #ffffff;
 $color-border: #444;
 
 $debug: false;
-$debug-css: true;
+$debug-css: false;
 
 body {
   background-color: $color-bg;
@@ -31,6 +31,13 @@ button {
 audio {
   margin-top: 1rem;
   filter: grayscale(100%) brightness(150%);
+}
+
+.img_title, img {
+  margin-bottom: 80px;
+  @if $debug {
+    border: 2px solid orangered;
+  }
 }
 
 .term-o-rama {
@@ -79,6 +86,7 @@ audio {
 }
 
 .loading-text {
+  // text-shadow: 0 0 1px rgb(255, 0, 179);
   color: $color-text;
   font-family: $font-terminal;
   font-size: 1rem;
@@ -95,6 +103,7 @@ audio {
 }
 
 .dots {
+  // text-shadow: 0 0 1px #0f0;
   display: inline-block;
   min-width: 30px; // réserve environ 3 caractères
   text-align: left;
@@ -123,6 +132,7 @@ audio {
 }
 
 .random-instruction {
+  // text-shadow: 0 0 1px #0f0;
   font-family: $font-terminal;
   font-size: 1rem;
   color: $color-text;
@@ -155,7 +165,15 @@ audio {
 .output-line {
   margin-bottom: 0.5rem;
   white-space: pre-wrap;
-  text-shadow: 0 0 1px #0f0;
+  // text-shadow: 0 0 1px #0f0;
+  font-family: $font-terminal;
+  font-size: 1rem;
+  color: $color-text;
+  // margin-bottom: 2rem;
+  white-space: pre-wrap;
+  text-align: left;
+  line-height: 1.4;
+  max-width: 640px;
   @if $debug {
     border: 2px solid orange;
   }
