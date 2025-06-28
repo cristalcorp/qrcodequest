@@ -1,10 +1,10 @@
 ---
 import TerminalShell from "../components/TerminalShell.jsx";
+import GeoGate from "../components/GeoGate.jsx";
 // import "../styles/main.scss";
 import "../styles/black.scss";
 // import "../styles/vert.scss";
 ---
-
 
 <html lang="fr">
   <head>
@@ -15,7 +15,8 @@ import "../styles/black.scss";
     <title>Activate Cities</title>
   </head>
   <body>
-
-    <TerminalShell client:load />
+    <GeoGate client:load>
+      <TerminalShell client:load />
+    </GeoGate>
   </body>
 </html>
