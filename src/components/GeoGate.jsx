@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
+import locations from "../data/locations.json";
 
-// Coordonnées autorisées (centres)
-const AUTHORIZED_POINTS = [
-  { label: "Paris", lat: 48.8566, lon: 2.3522 },
-  { label: "Berlin", lat: 52.52, lon: 13.405 },
-  { label: "Nice", lat: 43.7102, lon: 7.262 },
-];
+// // Coordonnées autorisées (centres)
+// const AUTHORIZED_POINTS = [
+//   { label: "Paris", lat: 48.8566, lon: 2.3522 },
+//   { label: "Berlin", lat: 52.52, lon: 13.405 },
+//   { label: "Nice", lat: 43.7102, lon: 7.262 },
+// ];
 
 // Rayon en mètres
 const RADIUS_METERS = 1000;
@@ -44,7 +45,7 @@ export default function GeoGate({ children }) {
       (pos) => {
         const { latitude, longitude } = pos.coords;
 
-        const isNear = AUTHORIZED_POINTS.some((p) => {
+        const isNear = locations.some((p) => {
           const d = distanceInMeters(latitude, longitude, p.lat, p.lon);
           return d <= RADIUS_METERS;
         });
@@ -58,8 +59,9 @@ export default function GeoGate({ children }) {
     );
   }, []);
 
-  if (authorized === null) return <div className="loading-text">⏳ Vérification GPS...</div>;
-  if (!authorized) return <div className="loading-text">⛔ Accès restreint à certaines zones géographiques.</div>;
+  if (authorized === null)
+    return <div className="loading-text">GPS Check...</div>;
+  if (!authorized) return <div className="loading-text">Geo Restricted</div>;
 
   return children;
 }
